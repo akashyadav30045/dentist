@@ -139,7 +139,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10 py-4">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-green-300">
-          <p>© 2024 Bouquet Dental. All Rights Reserved.</p>
+          <p>© 2024 Bouquet Dental. All Rights Reserved. This is a demo website and made by Akash Yadav.</p>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
             <span>|</span>
