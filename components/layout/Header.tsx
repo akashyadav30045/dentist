@@ -52,11 +52,11 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="w-9 h-9 rounded-full bg-[#1a5f4a] flex items-center justify-center">
-              <svg viewBox="0 0 24 24" fill="white" className="w-5 h-5">
-                <path d="M12 2C9.2 2 7 4.2 7 7c0 1.8.8 3.4 2 4.5L12 22l3-10.5C16.2 10.4 17 8.8 17 7c0-2.8-2.2-5-5-5z" />
-              </svg>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Bouquet Dental Logo"
+              className="w-9 h-9 object-contain"
+            />
             <div className="leading-none">
               <p className="text-[#1a5f4a] font-extrabold text-[13px] tracking-widest">BOUQUET</p>
               <p className="text-[#1a5f4a] font-extrabold text-[13px] tracking-widest">DENTAL</p>

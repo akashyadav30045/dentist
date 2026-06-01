@@ -40,11 +40,11 @@ export default function Footer() {
             {/* Brand */}
             <div className="col-span-2 lg:col-span-1">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center">
-                  <svg viewBox="0 0 24 24" fill="#1a5f4a" className="w-5 h-5">
-                    <path d="M12 2C9.2 2 7 4.2 7 7c0 1.8.8 3.4 2 4.5L12 22l3-10.5C16.2 10.4 17 8.8 17 7c0-2.8-2.2-5-5-5z" />
-                  </svg>
-                </div>
+                <img
+                  src="/logo.png"
+                  alt="Bouquet Dental Logo"
+                  className="w-9 h-9 object-contain bg-white rounded-full p-0.5"
+                />
                 <div className="leading-none">
                   <p className="font-extrabold text-[13px] tracking-widest">BOUQUET</p>
                   <p className="font-extrabold text-[13px] tracking-widest">DENTAL</p>
