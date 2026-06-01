@@ -1,5 +1,4 @@
 'use client';
-import { useEffect, useRef, useState } from 'react';
 import { useBooking } from '@/context/BookingContext';
 import { PHONE_RAW, PHONE_DISPLAY, DOCTOR_NAME } from '@/lib/constants';
 
@@ -29,36 +28,11 @@ const ACHIEVEMENTS = [
 ];
 
 function AnimatedStat({ stat }: { stat: typeof STATS[0] }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  const started = useRef(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started.current && stat.value > 0) {
-          started.current = true;
-          const duration = 1600;
-          const start = Date.now();
-          const timer = setInterval(() => {
-            const p = Math.min((Date.now() - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - p, 3);
-            setCount(Math.floor(eased * stat.value));
-            if (p >= 1) { setCount(stat.value); clearInterval(timer); }
-          }, 16);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [stat.value]);
-
   return (
-    <div ref={ref} className="bg-white rounded-2xl p-4 flex flex-col items-center text-center shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all">
+    <div className="bg-white rounded-2xl p-4 flex flex-col items-center text-center shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all">
       <span className="text-xl mb-1">{stat.icon}</span>
       <p className="text-2xl font-extrabold text-gray-900 leading-none">
-        {stat.display ?? `${count}${stat.suffix}`}
+        {stat.display ?? `${stat.value}${stat.suffix}`}
       </p>
       <p className="text-xs text-gray-500 mt-1 leading-tight">{stat.label}</p>
     </div>
